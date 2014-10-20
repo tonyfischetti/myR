@@ -122,15 +122,16 @@ write.csv <- function(adataframe, filename, ...){
   df
 }
 
-
 # provides a way to open a data frame in a spreadsheet application (Unix only!)
-.env$look <- function(df, n=99, sleep=5){
+.env$look <- function(df, n=99, sleep=5, short.sleep=1){
   thename <- deparse(substitute(df))
   if(n > 0 && n < nrow(df)){
     df <- df[1:n,]
   }
   fname <- paste0("/tmp/", thename, ".csv")
-  write.csv(df, fname, row.names=FALSE)
+  write.csv3(df, fname)
+  # give R time to finish writing file before trying to open it
+  Sys.sleep(short.sleep)
   system(paste0("open ", fname))
   # give the application time to open it before destroying file
   Sys.sleep(sleep)
