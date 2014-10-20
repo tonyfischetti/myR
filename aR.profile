@@ -112,6 +112,15 @@ if(interactive()){
   df
 }
 
+# provides a way to open a data frame in a spreadsheet application (Unix only!)
+.env$look <- function(df){
+  thename <- deparse(substitute(df))
+  fname <- paste0("/tmp/", thename, ".csv")
+  write.csv(df, fname, row.names=FALSE)
+  system(paste0("open ", fname))
+  system(paste0("rm ", fname))
+}
+
 attach(.env)
 
 
