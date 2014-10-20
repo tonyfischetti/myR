@@ -129,7 +129,7 @@ write.csv <- function(adataframe, filename, ...){
     df <- df[1:n,]
   }
   fname <- paste0("/tmp/", thename, ".csv")
-  write.csv3(df, fname)
+  write.csv(df, fname)
   # give R time to finish writing file before trying to open it
   Sys.sleep(short.sleep)
   system(paste0("open ", fname))
