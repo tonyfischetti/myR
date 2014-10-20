@@ -98,7 +98,6 @@ if(interactive()){
 ## CUSTOM FUNCTIONS ##
 ######################
 .env <- new.env()
-attach(.env)
 
 # stolen from Stephen Turner (http://gettinggeneticsdone.blogspot.com.es/2013/07/customize-rprofile.html)
 .env$unrowname <- function(x) {
@@ -113,6 +112,7 @@ attach(.env)
   df
 }
 
+attach(.env)
 
 
 # this is also useful for warning myself if I meant
