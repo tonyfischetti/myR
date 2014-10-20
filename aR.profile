@@ -112,12 +112,18 @@ if(interactive()){
   df
 }
 
+
 # provides a way to open a data frame in a spreadsheet application (Unix only!)
-.env$look <- function(df){
+.env$look <- function(df, n=99, sleep=5){
   thename <- deparse(substitute(df))
+  if(n > 0 && n < nrow(df)){
+    df <- df[1:n,]
+  }
   fname <- paste0("/tmp/", thename, ".csv")
   write.csv(df, fname, row.names=FALSE)
   system(paste0("open ", fname))
+  # give the application time to open it before destroying file
+  Sys.sleep(sleep)
   system(paste0("rm ", fname))
 }
 
