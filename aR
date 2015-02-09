@@ -1,0 +1,3 @@
+#!/bin/bash
+
+R_PROFILE_USER=~/.myR/aR.profile R
