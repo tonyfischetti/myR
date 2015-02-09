@@ -18,6 +18,10 @@ options(scipen=10)
 
 options(editor="vim")
 
+options(warn = 2)
+
+options(useFancyQuotes = FALSE)
+
 # I'll keep this here for posterity but
 # I keep it commented because ever since
 # 1st grade I used number of stars as a
