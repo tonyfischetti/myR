@@ -104,11 +104,11 @@ if(interactive()){
 
 
 # better defaults for write.csv
-write.csv <- function(adataframe, filename, ...){
-  outfile <- file(filename, "w", encoding="UTF-8")
-  utils::write.csv(adataframe, outfile, row.names=FALSE, ...)
-  close(outfile)
-}
+# write.csv <- function(adataframe, filename, ...){
+#   outfile <- file(filename, "w", encoding="UTF-8")
+#   utils::write.csv(adataframe, outfile, row.names=FALSE, ...)
+#   close(outfile)
+# }
 
 
 .env <- new.env()
