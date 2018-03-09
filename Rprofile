@@ -92,6 +92,10 @@ q <- function (save="no", ...) {
   #return(sprintf("%.2f <-> %.2f", dascis[[type]][4], dascis[[type]][5]))
 }
 
+.env$fwcsv <- function(x, name){ data.table::fwrite(x, sprintf("%s.csv", name), sep=",") }
+.env$fwtsv <- function(x, name) data.table::fwrite(x, sprintf("%s.tsv", name), sep="\t")
+.env$fwpsv <- function(x, name) data.table::fwrite(x, sprintf("%s.psv", name), sep="|")
+
 attach(.env)
 
 message("\n*** Successfully loaded .Rprofile ***\n")

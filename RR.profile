@@ -7,7 +7,6 @@
 ###                                        ###
 ##############################################      
 
-source("./Rprofile")
 
 # get noisy package imports to shut up
 #   we have to jump through hoops to get the
@@ -28,6 +27,8 @@ if(interactive()){
   invisible(sapply(auto.loads, sshhh))
 }
 # sapply(auto.loads, function(x) library(x, character.only=TRUE))
+
+source("~/.Rprofile")
 
 message("\n*** loaded magrittr, data.table, assertr, dplyr, and tidyr ***\n")
 
