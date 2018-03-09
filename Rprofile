@@ -1,29 +1,45 @@
+
+##############################################
+###                                        ###
+###   Tony Fischetti's default R profile   ###
+###                                        ###
+###             tony.fischetti@gmail.com   ###
+###                                        ###
+##############################################      
+
 # set default CRAN mirror
 local({r <- getOption("repos")
       r["CRAN"] <- "https://cran.revolutionanalytics.com/"
       options(repos=r)})
 
 
-options(useFancyQuotes = FALSE)
-options(max.print=100)
-options(scipen=10)
-# options(editor="vim")
-options(warn = 2)
+#############
+## OPTIONS ##
+#############
 
-options(menu.graphics=FALSE)
-
+options(stringsAsFactors=FALSE)    # stringsAsFactors=HELLNO
+options(max.print=100)          
+options(scipen=10)                 # no scientific notation
+options(editor="vim")              # the best there is
+options(warn = 2)                  # warnings as errors
+options(useFancyQuotes = FALSE)    # just no
+options(menu.graphics=FALSE)       # no time for Tk to load
 options(width = 80)
+options(prompt="> ")
+options(continue="... ")           # helps me realize when I forget to close (
 
-utils::rc.settings(ipck=TRUE)
+utils::rc.settings(ipck=TRUE)      # tab complete package names
 
+# pretty colors
+library("colorout")
+
+# I never want to save, fam
 q <- function (save="no", ...) {
   quit(save=save, ...)
 }
 
-utils::rc.settings(ipck=TRUE)
 
-library("colorout")
-
+# set up .Rhistory dump
 .First <- function(){
   if(interactive()){
     library(utils)
@@ -40,8 +56,15 @@ library("colorout")
   }
 }
 
+
+
+######################
+## CUSTOM FUNCTIONS ##
+######################
+
 .env <- new.env()
 
+# provides a way to open a data frame in a spreadsheet application (Unix only!)
 .env$look <- function(df, n=99, sleep=5, short.sleep=1){
   thename <- deparse(substitute(df))
   if(n > 0 && n < nrow(df)){
@@ -64,10 +87,11 @@ library("colorout")
                              parallel="multicore", ncpus=cores)
   dascis <- boot::boot.ci(dasboot , type="bca")
   retval <- c(dascis[[type]][4], dascis[[type]][5])
-  # names(retval) <- c("|.95", ".95|")
-  # return(retval)
-  return(sprintf("%.2f <-> %.2f", dascis[[type]][4], dascis[[type]][5]))
+  names(retval) <- c("|.95", ".95|")
+  return(retval)
+  #return(sprintf("%.2f <-> %.2f", dascis[[type]][4], dascis[[type]][5]))
 }
 
-
 attach(.env)
+
+message("\n*** Successfully loaded .Rprofile ***\n")
