@@ -2,8 +2,8 @@ F77=gfortran-mp-8
 FC=$F77
 FLIBS=-L/opt/local/lib/gcc8/ -lgfortran -lquadmath -lm
 
-CC=clang-mp-6.0
-CXX=clang++-mp-6.0 -arch x86_64 -ftemplate-depth-256
+CC=gcc-mp-8
+CXX=g++-mp-8 -arch x86_64 -ftemplate-depth-256
 CXXFLAGS=-O3 -mtune=native -march=native -Wno-unused-variable -Wno-unused-function
 CXXFLAGS += -Wno-ignored-attributes -Wno-deprecated-declarations
 
