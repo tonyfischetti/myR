@@ -9,7 +9,7 @@
 
 # set default CRAN mirror
 local({r <- getOption("repos")
-      r["CRAN"] <- "https://cran.revolutionanalytics.com/"
+      r["CRAN"] <- "https://mirrors.sorengard.com/cran/"
       options(repos=r)})
 
 
@@ -25,8 +25,8 @@ options(warn = 2)                  # warnings as errors
 options(useFancyQuotes = FALSE)    # just no
 options(menu.graphics=FALSE)       # no time for Tk to load
 options(width = 80)
-options(prompt="> ")
-options(continue="... ")           # helps me realize when I forget to close (
+# options(prompt="> ")
+# options(continue="... ")           # helps me realize when I forget to close (
 
 utils::rc.settings(ipck=TRUE)      # tab complete package names
 
