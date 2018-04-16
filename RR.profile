@@ -20,7 +20,7 @@ sshhh <- function(a.package){
 
 # list of packages to auto-load if interactive
 auto.loads <-c("magrittr", "data.table", "assertr", "dplyr",
-               "ggplot2", "tidyr")
+               "ggplot2", "tidyr", "stringr")
 
 # auto-load quietly
 if(interactive()){
