@@ -9,7 +9,7 @@
 
 # set default CRAN mirror
 local({r <- getOption("repos")
-      r["CRAN"] <- "https://mirrors.sorengard.com/cran/"
+      r["CRAN"] <- "https://cloud.r-project.org"
       options(repos=r)})
 
 
@@ -95,6 +95,8 @@ q <- function (save="no", ...) {
 .env$fwcsv <- function(x, name){ data.table::fwrite(x, sprintf("%s.csv", name), sep=",") }
 .env$fwtsv <- function(x, name) data.table::fwrite(x, sprintf("%s.tsv", name), sep="\t")
 .env$fwpsv <- function(x, name) data.table::fwrite(x, sprintf("%s.psv", name), sep="|")
+
+.env$freadc <- function(input, ...) data.table::fread(input, colClasses="character", ...)
 
 attach(.env)
 
