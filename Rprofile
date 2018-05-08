@@ -27,6 +27,8 @@ options(menu.graphics=FALSE)       # no time for Tk to load
 options(width = 80)
 # options(prompt="> ")
 # options(continue="... ")           # helps me realize when I forget to close (
+options(datatable.print.class=TRUE)
+options(datatable.print.keys=TRUE)
 
 utils::rc.settings(ipck=TRUE)      # tab complete package names
 
