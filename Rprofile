@@ -24,6 +24,7 @@ options(editor="vim")              # the best there is
 options(warn = 2)                  # warnings as errors
 options(useFancyQuotes = FALSE)    # just no
 options(menu.graphics=FALSE)       # no time for Tk to load
+options(max.print=300)
 options(width = 80)
 # options(prompt="> ")
 # options(continue="... ")           # helps me realize when I forget to close (
