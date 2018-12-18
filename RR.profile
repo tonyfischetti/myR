@@ -29,6 +29,7 @@ if(interactive()){
 # sapply(auto.loads, function(x) library(x, character.only=TRUE))
 
 source("~/.Rprofile")
+source("~/.R/tony-utils.R")
 
 message("\n*** loaded magrittr, data.table, assertr, dplyr, and tidyr ***\n")
 
