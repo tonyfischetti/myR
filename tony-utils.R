@@ -55,6 +55,20 @@
   rbind(tmp, tmp2)
 }
 
+.env$getxtab2 <- function(DT, theby, cutoff){
+  tmp <- DT[, .N, theby][order(-N)]
+  thetotal <- tmp[, sum(N)]
+  tmp[, percent:=round(N/thetotal*100, 2)]
+  tmp[percent<=cutoff, (theby):="OTHER"]
+  tmp <- tmp[, .(N=sum(N), percent=sum(percent)), theby]
+  tmp2 <- tmp[1,]
+  tmp2[1,1] <- "TOTAL"
+  tmp2[1,2] <- thetotal
+  tmp2[1,3] <- 100
+  rbind(tmp, tmp2)
+}
+
+
 attach(.env)
 
 
