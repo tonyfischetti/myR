@@ -15,3 +15,4 @@ script
 
     git clone https://github.com/tonyfischetti/myR.git ~/.R/
     ln -s ~/.R/Rprofile ~/.Rprofile
+    ln -s ~/.R/.inputrc ~/.inputrc
