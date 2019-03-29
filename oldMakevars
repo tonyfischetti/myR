@@ -2,12 +2,7 @@ F77=gfortran-mp-8
 FC=gfortran-mp-8
 FLIBS=-L/opt/local/lib/gcc8/ -lgfortran -lquadmath -lm
 
-# needed to compile data.table
-# CC=gcc-mp-8 -fopenmp
 CC=gcc-mp-8
-CFLAGS=-g -O3
-# needed to compile data.table
-# CXX=g++-mp-8 -fopenmp
 CXX=g++-mp-8
 CXXFLAGS=-O3 -mtune=native -march=native -Wno-unused-variable -Wno-unused-function -arch x86_64 -ftemplate-depth-256 -Wno-ignored-attributes -Wno-deprecated-declarations
 

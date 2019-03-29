@@ -5,7 +5,7 @@
 ###                                        ###
 ###             tony.fischetti@gmail.com   ###
 ###                                        ###
-##############################################      
+##############################################
 
 # set default CRAN mirror
 local({r <- getOption("repos")
@@ -18,7 +18,7 @@ local({r <- getOption("repos")
 #############
 
 options(stringsAsFactors=FALSE)    # stringsAsFactors=HELLNO
-options(max.print=100)          
+options(max.print=100)
 options(scipen=10)                 # no scientific notation
 options(editor="vim")              # the best there is
 options(warn = 2)                  # warnings as errors

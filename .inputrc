@@ -1,3 +1,5 @@
 set editing-mode vi
 
 "\C-l": clear-screen
+"\C-k":history-search-backward
+"\C-j":history-search-forward

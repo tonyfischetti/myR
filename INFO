@@ -1,0 +1,19 @@
+R compiled (on Mac) with the following options..
+
+
+
+export CPPFLAGS="-I/opt/local/include/ -I/opt/local/include/X11"; export
+LDFLAGS="-L/opt/local/lib"; export R_PDFVIEWER=/usr/bin/open; export
+R_BROWSER=/usr/bin/open; export CC="gcc"; export CXX="gcc"; export
+F77="gfortran-mp-8"; export FC="gfortran-mp-8"
+
+./configure --prefix=/usr/local --enable-R-profiling
+--enable-memory-profiling --enable-R-shlib --enable-java
+--enable-byte-compiled-packages --enable-shared --with-readline
+--with-blas="-L/opt/local/lib/ -lopenblas" --with-aqua
+--with-tcltk --with-tcl-config=/opt/local/lib/tclConfig.sh
+--with-tk-config=/opt/local/lib/tkConfig.sh --with-cairo
+--with-libpng --with-libtiff --with-recommended-packages
+--with-ICU --with-libpth-prefix=/opt/local/ --with-x
+--x-includes=/opt/local/include/X11 --x-libraries=/opt/local/lib
+
