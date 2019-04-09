@@ -1,21 +1,28 @@
 R compiled (on Mac) with the following options..
 
+export PATH="/usr/local/clang6/bin/:$PATH"; export
+        CFLAGS="-fopenmp -flto -O2 -march=native -mtune=native
+        -pipe -arch x86_64 -I/usr/local/clang6/include/
+        -I/opt/local/include/ -I/opt/local/include/X11 -I/usr/include
+        -DMZUNAME=\\\"Darwin\\\" -DMZHOSTNAME=\\\"tony-fischetti-work\\\"
+        -DEXTENDED_HISTORY_FILE=\\\"/Users/tonyfischetti/.r_extended_history\\\"";
+        export CPPFLAGS="-O2 -fopenmp -I/usr/local/clang6/include/
+        -I/opt/local/include/ -I/opt/local/include/X11 -I/usr/include";
+        export LDFLAGS="-L/usr/local/clang6/lib -L/opt/local/lib
+        -L/opt/local/lib/X11 -L/usr/lib"; export R_PDFVIEWER=/usr/bin/open;
+        export R_BROWSER=/usr/bin/open; export CC="/usr/local/clang6/bin/clang";
+        export CXX="/usr/local/clang6/bin/clang++"; export F77="gfortran-mp-8";
+        export FC="gfortran-mp-8"; export FFLAGS="-O2 -fopenmp"; export
+        OBJC="/usr/local/clang6/bin/clang";
 
-export CFLAGS="-O3 -DMZUNAME=\\\"Darwin\\\"
--DMZHOSTNAME=\\\"tony-fischetti-work\\\"
--DEXTENDED_HISTORY_FILE=\\\"/Users/tonyfischetti/.r_extended_history\\\""
-CPPFLAGS="-I/opt/local/include/ -I/opt/local/include/X11"; export
-LDFLAGS="-L/opt/local/lib"; export R_PDFVIEWER=/usr/bin/open; export
-R_BROWSER=/usr/bin/open; export CC="gcc"; export CXX="gcc"; export
-F77="gfortran-mp-8"; export FC="gfortran-mp-8"; export FFLAGS="-O3";
 
 ./configure --prefix=/usr/local --enable-R-profiling
---enable-memory-profiling --enable-R-shlib --enable-java
---enable-byte-compiled-packages --enable-shared --with-readline
---with-blas="-L/opt/local/lib/ -lopenblas" --with-aqua
---with-tcltk --with-tcl-config=/opt/local/lib/tclConfig.sh
---with-tk-config=/opt/local/lib/tkConfig.sh --with-cairo
---with-libpng --with-libtiff --without-recommended-packages
---with-ICU --with-libpth-prefix=/opt/local/ --with-x
---x-includes=/opt/local/include/X11 --x-libraries=/opt/local/lib
+        --enable-memory-profiling --enable-R-shlib --enable-java
+        --enable-byte-compiled-packages --enable-shared --with-readline
+        --with-blas="-L/opt/local/lib/ -lopenblas" --with-aqua
+        --with-tcltk --with-tcl-config=/opt/local/lib/tclConfig.sh
+        --with-tk-config=/opt/local/lib/tkConfig.sh --with-cairo
+        --with-libpng --with-libtiff --without-recommended-packages
+        --with-ICU --with-libpth-prefix=/opt/local/ --with-x
+        --x-includes=/opt/local/include/X11 --x-libraries=/opt/local/lib
 
