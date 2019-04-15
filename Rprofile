@@ -30,7 +30,7 @@ options(width = 80)
 # options(continue="... ")           # helps me realize when I forget to close (
 options(datatable.print.class=TRUE)
 options(datatable.print.keys=TRUE)
-options(datatable.prettyprint.char=30)
+options(datatable.prettyprint.char=50)
 
 
 utils::rc.settings(ipck=TRUE)      # tab complete package names
