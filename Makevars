@@ -11,8 +11,8 @@ CXXFLAGS=-O2 -march=native -mtune=native -pipe -arch x86_64
 #CXX_STD=g++-mp-8
 #CXX11=g++-mp-8
 
-# CC=/usr/local/gcc-8.3/bin/gcc-8.3 -fopenmp
-# CXX=/usr/local/gcc-8.3/bin/g++-8.3 -fopenmp
-# CXX_STD=/usr/local/gcc-8.3/bin/g++-8.3 -fopenmp
-# CXX11=/usr/local/gcc-8.3/bin/g++-8.3 -fopenmp
+CC=/usr/local/gcc-8.3/bin/gcc-8.3 -fopenmp
+CXX=/usr/local/gcc-8.3/bin/g++-8.3 -fopenmp
+CXX_STD=/usr/local/gcc-8.3/bin/g++-8.3 -fopenmp
+CXX11=/usr/local/gcc-8.3/bin/g++-8.3 -fopenmp
 
