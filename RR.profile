@@ -19,8 +19,13 @@ sshhh <- function(a.package){
 }
 
 # list of packages to auto-load if interactive
-auto.loads <-c("magrittr", "assertr", "dplyr",
-               "ggplot2", "tidyr", "stringr", "data.table")
+auto.loads <-c("magrittr",
+                # "assertr",
+                # "dplyr",
+                # "tidyr",
+                "ggplot2",
+                "stringr",
+                "data.table")
 
 # auto-load quietly
 if(interactive()){
@@ -31,6 +36,6 @@ if(interactive()){
 source("~/.Rprofile")
 source("~/.R/tony-utils.R")
 
-message("\n*** loaded magrittr, data.table, assertr, dplyr, and tidyr ***\n")
+message("\n*** loaded magrittr, ggplot2, stringr, and data.table ***\n")
 
 message("\n*** Successfully loaded expanded .RRprofile ***\n")
